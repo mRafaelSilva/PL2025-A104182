@@ -3,7 +3,7 @@
 ## Autor
 Mário Rafael Figueiredo da Silva - A104182
 
-![img](foto.JPG)
+<img src="foto.JPG" alt="img" width="200">
 
 
 
