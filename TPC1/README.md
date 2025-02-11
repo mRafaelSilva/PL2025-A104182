@@ -7,10 +7,11 @@ Mário Rafael Figueiredo da Silva
 2025-02-8
 
 ## Ficheiro
-[ficheiro]<sum.py>
+[ficheiro código](sum.py)
+
 
 ## Descrição
-A função `soma` lê uma string com o objetivo de somar todos os algarismos presentes na mesma. Este comportamente deve ser desativado quando se encontra o comando "OFF" e novamente ativado se o comando for "ON". Sempre que surgir o caracter "=" deve ser impresso o valor somado até ao momento.
+A função "soma" lê uma string com o objetivo de somar todos os algarismos presentes na mesma. Este comportamente deve ser desativado quando se encontra o comando "OFF" e novamente ativado se o comando for "ON". Sempre que surgir o caracter "=" deve ser impresso o valor somado até ao momento.
 
 ## Funcionamento
 1. **Leitura de números**: 
@@ -24,6 +25,7 @@ A função percorre a string, caracter por caracter, e acumula algarismos consec
 ### Input:
 ```python
 texto = "12teste34 ON56OFF 78ON90 = 5 OFF10 = ON20="
+soma(texto)
 ```
 
 ### Saida Esperada:
