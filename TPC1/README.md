@@ -6,6 +6,8 @@ Mário Rafael Figueiredo da Silva
 ## Data
 2025-02-8
 
+## Ficheiro
+[ficheiro]<sum.py>
 
 ## Descrição
 A função `soma` lê uma string com o objetivo de somar todos os algarismos presentes na mesma. Este comportamente deve ser desativado quando se encontra o comando "OFF" e novamente ativado se o comando for "ON". Sempre que surgir o caracter "=" deve ser impresso o valor somado até ao momento.
