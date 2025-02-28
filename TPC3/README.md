@@ -14,20 +14,22 @@ Mário Rafael Figueiredo da Silva
 A função converter transforma texto escrito em Markdown para HTML, convertendo corretamente cabeçalhos, formatação de texto (negrito e itálico), listas numeradas, links e imagens. O programa lê um texto de entrada, e retorna a versão correspondente em HTML.
 
 ## Funcionamento
+
 1. **Leitura do texto Markdown**: 
    O programa continua a leitura do texto, inserido no terminal, até uma linha vazia ser inserida.
+
 2. **Conversão de Markdown para HTML**:
-    Cabeçalhos #, ## e ### são convertidos para <h1>, <h2> e <h3>.
+    Cabeçalhos #, ## e ### são convertidos para `<h1>`, `<h2>` e `<h3>`.
 
-    - Texto em **negrito** é convertido para <b>...</b>.
+    - Texto em **negrito** é convertido para `<b>`...`</b>`.
 
-    - Texto em *itálico* é convertido para <i>...</i>.
+    - Texto em *itálico* é convertido para `<i>`...`</i>`.
 
-    - Listas numeradas são transformadas em elementos <ol> e <li>.
+    - Listas numeradas são transformadas em elementos `<ol>` e `<li>`.
 
-    - Links [texto](URL) são transformados em <a href="URL">texto</a>.
+    - Links `[texto](URL)` são transformados em `<a href="URL">texto</a>`.
 
-    - Imagens ![texto](URL) são transformadas em <img src="URL" alt="texto"/>.
+    - Imagens `![texto](URL)` são transformadas em `<img src="URL" alt="texto"/>`.
 
 3. **Impressão do HTML gerado**:
     O HTML formatado é impresso no terminal.
