@@ -329,9 +329,6 @@ def analyze_file(filename):
         return []
 
 def get_input():
-    """Interactive mode"""
-    print("Pascal Lexer - Abordagem com ER Puras")
-    print("Type 'quit' to exit, 'file <filename>' to analyze a file")
     
     while True:
         try:
