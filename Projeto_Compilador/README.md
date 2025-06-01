@@ -682,7 +682,7 @@ Para além das que já foram mencionadas anteriormente, o nosso código está ad
 
 É importante referir que, apesar de captarmos os tokens e realizarmos a sintática dos procedures e das funções, não nos foi possível implementar essa funcionalidade nesta fase de geração de código.
 
-## 7. Conclusão
+## 6. Conclusão
 
 Em suma, a implementação deste Compilador para Pascal constituiu uma excelente oportunidade para aplicar de forma concreta os conceitos teóricos abordados na respetiva unidade curricular. Foi possível compreender em profundidade o funcionamento interno de um compilador, desde a leitura do código-fonte até à verificação das suas propriedades semânticas.
 
