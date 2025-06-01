@@ -1,9 +1,5 @@
 import ply.lex as lex
 
-"""
-Pascal Lexical Analyzer - Abordagem Correta com Expressões Regulares
-"""
-
 tokens = (
     # bloco principal
     'PROGRAM', 'BEGIN', 'END',
@@ -47,17 +43,10 @@ states = (
     ('comment', 'exclusive'),
 )
 
-# ignorar espaços e tabulações em modo normal
 t_ignore = ' \t'
 t_comment_ignore = ''
 
-# ========================================
-# ABORDAGEM CORRETA: ER para cada keyword
-# ORDEM IMPORTA: keywords antes de ID!
-# ========================================
 
-# Keywords com ER individuais (case-insensitive)
-# Usando [Pp][Rr][Oo][Gg][Rr][Aa][Mm] em vez de (?i) para máxima compatibilidade
 def t_PROGRAM(t):
     r'[Pp][Rr][Oo][Gg][Rr][Aa][Mm]'
     return t
@@ -198,7 +187,7 @@ def t_TO(t):
     r'[Tt][Oo]'
     return t
 
-# operadores e símbolos (ordem importa - mais específicos primeiro)
+# operadores e símbolos
 t_ASSIGN    = r':='
 t_LE        = r'<='
 t_GE        = r'>='
@@ -219,13 +208,13 @@ t_SEMICOLON = r';'
 t_DOT       = r'\.'
 t_COMMA     = r','
 
-# comentários entre { }
+
 def t_COMMENT(t):
     r'\{[^}]*\}'
     t.lexer.lineno += t.value.count('\n')
     pass
 
-# comentários entre (* *) com aninhamento
+
 def t_LPAREN_STAR(t):
     r'\(\*'
     t.lexer.comment_level = 1
@@ -252,7 +241,7 @@ def t_comment_content(t):
 def t_comment_error(t):
     t.lexer.skip(1)
 
-# números (real numbers first to avoid conflicts)
+
 def t_REALNUM(t):
     r'\d+\.\d+([eE][+-]?\d+)?'
     try:
@@ -271,39 +260,30 @@ def t_INT(t):
         t.value = 0
     return t
 
-# ========================================
-# SIMPLIFIED STRING/CHARACTER HANDLING
-# ========================================
 
-# Strings: must have 2+ characters inside quotes OR contain escaped quotes
 def t_STRING(t):
     r"'(?:''|[^']){2,}'"
-    # Remove outer quotes and handle escaped single quotes
+
     t.value = t.value[1:-1].replace("''", "'")
     return t
 
-# Character literals: exactly one character inside quotes
+
 def t_CHARLIT(t):
     r"'[^']'"
-    # Remove outer quotes
+
     t.value = t.value[1:-1]
     return t
 
-# Special case: escaped single quote as character literal
+
 def t_CHARLIT_ESCAPED(t):
     r"''''"
     t.value = "'"
     t.type = 'CHARLIT'
     return t
 
-# ========================================
-# IDENTIFICADORES - DEVE VIR NO FINAL!
-# Só reconhece como ID se não for keyword
-# ========================================
+
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z0-9_]*'
-    # Não há pesquisa em dicionário!
-    # Se chegou aqui, já não é keyword
     return t
 
 # nova linha
@@ -316,7 +296,7 @@ def t_error(t):
     print(f"Illegal character '{t.value[0]}' at line {t.lexer.lineno}")
     t.lexer.skip(1)
 
-# criar lexer
+
 lexer = lex.lex()
 
 def analyze_file(filename):
