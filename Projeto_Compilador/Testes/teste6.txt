@@ -1,0 +1,49 @@
+pushi 0
+pushi 0
+start
+pushs "introduza uma string binária:"
+writes
+writeln
+read
+storeg 0
+pushi 0
+storeg 2
+pushi 1
+storeg 3
+pushg 0
+strlen
+storeg 1
+label1:
+pushg 1
+pushi 1
+supeq
+jz label2
+pushg 0
+pushg 1
+pushi 1
+sub
+charat
+pushi 49
+equal
+jz endif3
+pushg 2
+pushg 3
+add
+storeg 2
+endif3:
+pushg 3
+pushi 2
+mul
+storeg 3
+pushg 1
+pushi 1
+sub
+storeg 1
+jump label1
+label2:
+pushs "o valor inteiro correspondente é: "
+writes
+pushg 2
+writei
+writeln
+stop

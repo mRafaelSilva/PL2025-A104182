@@ -1,0 +1,44 @@
+pushi 0
+pushi 0
+start
+alloc 5
+storeg 0
+pushi 0
+storeg 2
+pushs "introduza 5 números inteiros:"
+writes
+writeln
+pushi 1
+storeg 1
+label1:
+pushg 1
+pushi 5
+infeq
+jz label2
+pushg 0
+pushg 1
+pushi 1
+sub
+read
+atoi
+storen
+pushg 2
+pushg 0
+pushg 1
+pushi 1
+sub
+loadn
+add
+storeg 2
+pushg 1
+pushi 1
+add
+storeg 1
+jump label1
+label2:
+pushs "a soma dos números é: "
+writes
+pushg 2
+writei
+writeln
+stop

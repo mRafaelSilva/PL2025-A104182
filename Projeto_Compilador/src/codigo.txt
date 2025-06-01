@@ -1,0 +1,23 @@
+pushi 0
+pushi 0
+start
+pushs "introduza um número inteiro:"
+writes
+writeln
+read
+atoi
+storeg 0
+pushg 0
+pushg 0
+mul
+storeg 1
+pushs "o quadrado de "
+writes
+pushg 0
+writei
+pushs " é: "
+writes
+pushg 1
+writei
+writeln
+stop
